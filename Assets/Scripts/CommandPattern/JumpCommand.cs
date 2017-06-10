@@ -7,7 +7,7 @@ public class JumpCommand : Command {
 	private Rigidbody rigidbody;
 	
 	public override void Execute(GameObject obj){
-		if(rigidbody == null){
+		if(rigidbody == null || rigidbody.gameObject != obj){
 			rigidbody = obj.GetComponent<Rigidbody>();
 		}
 		if(obj.transform.position.y - groundDist < Mathf.Epsilon){
